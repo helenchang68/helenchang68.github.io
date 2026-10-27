@@ -1,0 +1,105 @@
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1c1c1a;
+  --muted: #5f5e58;
+  --line: #e6e3dc;
+  --accent: #2f5d50;
+  --accent-soft: #e5eeea;
+  --max: 760px;
+  --radius: 10px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151614;
+    --surface: #1d1f1c;
+    --text: #ecebe6;
+    --muted: #a3a29b;
+    --line: #2e302c;
+    --accent: #8cc4b0;
+    --accent-soft: #233029;
+  }
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+img { max-width: 100%; height: auto; border-radius: var(--radius); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Header / nav ---------- */
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .wrap {
+  display: flex; flex-wrap: wrap; gap: 8px 24px;
+  align-items: center; justify-content: space-between;
+  padding-top: 18px; padding-bottom: 18px;
+}
+.brand { font-weight: 650; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
+.nav { display: flex; gap: 20px; font-size: 15px; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
+
+/* ---------- Type ---------- */
+h1, h2, h3 { line-height: 1.25; letter-spacing: -0.015em; }
+h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 6vw, 42px); margin: 0 0 12px; }
+h2 { font-size: 22px; margin: 48px 0 12px; }
+h3 { font-size: 18px; margin: 28px 0 8px; }
+.lede { font-size: 19px; color: var(--muted); margin: 0 0 20px; }
+.eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 8px; }
+main.wrap { padding-top: 56px; padding-bottom: 72px; }
+
+/* ---------- Tags ---------- */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.tag { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; gap: 16px; margin-top: 16px; }
+.card {
+  display: block; padding: 20px 22px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  color: var(--text); text-decoration: none; transition: border-color .15s, transform .15s;
+}
+.card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.card h3 { margin: 0 0 4px; }
+.card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+.card .meta { font-size: 13px; color: var(--muted); }
+.status { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+/* ---------- Case study ---------- */
+.summary {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;
+  padding: 18px 20px; margin: 28px 0 8px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  font-size: 15px;
+}
+.summary dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.summary dd { margin: 2px 0 0; }
+.callout {
+  border-left: 3px solid var(--accent); background: var(--accent-soft);
+  padding: 12px 16px; border-radius: 0 var(--radius) var(--radius) 0; margin: 20px 0;
+}
+.todo {
+  background: #fff4cc; color: #5a4500; padding: 2px 6px; border-radius: 4px; font-size: 14px;
+}
+@media (prefers-color-scheme: dark) { .todo { background: #4a3c08; color: #ffe9a3; } }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 16px 0; display: block; overflow-x: auto; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 13px; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; padding-top: 24px; padding-bottom: 32px; }
+.site-footer a { color: var(--muted); }
