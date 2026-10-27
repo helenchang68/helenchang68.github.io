@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakUp | Helen Chang Hung</title>
+  <meta name="description" content="An AI speaking tutor for four languages, and why a speech-to-text plus text-to-speech pipeline beat direct speech-to-speech for a small product.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;650&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Helen Chang Hung</a>
+      <nav class="nav">
+        <a href="./" aria-current="page">Projects</a>
+        <a href="../writing/">Writing</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Prototype · Case study · 2026</p>
+    <h1>SpeakUp: an AI speaking tutor</h1>
+    <p class="lede">Direct speech-to-speech felt like the obvious design, but it was too expensive for a small product. Splitting the job into transcribe, reason, then speak cut cost, and the text step in the middle made structured, trackable feedback possible.</p>
+
+    <dl class="summary">
+      <div><dt>Problem</dt><dd>Learners rarely get low-pressure speaking practice with instant correction</dd></div>
+      <div><dt>Built with</dt><dd>Next.js, OpenAI Whisper, GPT-4o, Google TTS, Supabase</dd></div>
+      <div><dt>Languages</dt><dd>English, Chinese, Vietnamese, Korean</dd></div>
+      <div><dt>Links</dt><dd><a href="https://github.com/helenchang68/language-tutor">Code on GitHub</a><!-- TODO: add live demo link --></dd></div>
+    </dl>
+
+    <h2>1. The problem</h2>
+    <p>Language learners can read and listen far better than they can speak, because speaking practice needs another person. Tutors are expensive, language exchanges are hard to schedule, and many learners are too self-conscious to make mistakes in front of someone. I experienced this myself learning Korean: strong reading and listening, much weaker speaking.</p>
+    <!-- TODO: add 1 to 2 lines from classmates or test users on how they practise speaking today. -->
+
+    <h2>2. The hypothesis</h2>
+    <p>An AI conversation partner that replies naturally <em>and</em> flags each mistake with a more native phrasing would give learners more speaking reps than they get today, at a cost low enough to offer cheaply.</p>
+
+    <h2>3. The approach</h2>
+    <p>Each turn runs through three steps:</p>
+    <ol>
+      <li><strong>Transcribe</strong> the learner's audio with Whisper.</li>
+      <li><strong>Reason</strong> with GPT-4o, which returns structured JSON: a correction (if any), a more natural phrasing, a conversational reply, and a mistake category.</li>
+      <li><strong>Speak</strong> the reply with a Google text-to-speech voice for that language.</li>
+    </ol>
+    <p>Each language has its own hand-written teacher prompt rather than one shared template, because the teaching concerns differ: honorifics and particles in Korean, tones in Chinese and Vietnamese, classifiers in both.</p>
+
+    <h3>Alternative considered: direct speech-to-speech</h3>
+    <p>A realtime speech-to-speech model gives the smoothest, most human-feeling conversation. I chose not to use it for two reasons:</p>
+    <ul>
+      <li><strong>Cost.</strong> Realtime speech-to-speech is billed on audio in both directions, which made a back-and-forth practice session expensive to run for many users. Transcription, a text model, and standard text-to-speech cost far less per turn.<!-- TODO: add cost per 10-minute session for each option --></li>
+      <li><strong>Feedback quality.</strong> With a text step in the middle, the model's output is structured data. That made it possible to show corrections on screen, tag each mistake, and store it. A pure audio loop makes that much harder.</li>
+    </ul>
+    <p>The trade-off is latency: three sequential calls feel less natural than one realtime stream.<!-- TODO: measured seconds per turn --></p>
+
+    <h3>Persistence and analytics</h3>
+    <p>Conversations and corrections are stored in Supabase under an anonymous ID (no login). Each mistake is tagged as grammar, word order, vocabulary, particles or classifiers, pronunciation or tone, or other, which feeds an analytics page showing a learner's own patterns and the aggregate across all users.</p>
+
+    <h2>4. The evidence</h2>
+    <p>Next step: a small structured test with a handful of learners, 10-minute sessions each, with a native speaker rating whether each correction is right. I will measure correction accuracy, speaking turns per session, response time, and cost per session, and post the results here.</p>
+    <!-- TODO: replace the paragraph above with results table (metric / result / note) -->
+
+    <h2>5. Commercial implications</h2>
+    <!-- TODO: who would pay? what price covers per-session cost? how does it differ from existing apps? -->
+    <p>The mistake-category data is the most interesting asset: aggregated across many learners, it shows which errors are typical for speakers of a given language, which is useful to teachers and course designers.</p>
+
+    <h2>6. What I learned / would change</h2>
+    <ul>
+      <li>The cheaper architecture was also the more useful one, because structured output is what makes feedback storable and measurable.</li>
+      <li>One generic prompt translated into four languages would have been worse than four prompts written for each language's specific difficulties.</li>
+      <li>The question I want to test next: do learners make fewer mistakes in their most frequent category after several sessions?</li>
+    </ul>
+
+    <div class="callout">How I built this: I wrote the original Korean version by hand, then used AI-assisted coding to generalise it to four languages and add the database and analytics. My role was the product decisions: the architecture trade-off, the feedback format, the per-language prompts, and the mistake taxonomy.</div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Helen Chang Hung · Singapore</span>
+      <span>
+        <a href="https://www.linkedin.com/in/changhung-helen/">LinkedIn</a> ·
+        <a href="https://github.com/helenchang68">GitHub</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
