@@ -1,39 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helen Chang</title>
-  <style>
-    body {
-      font-family: -apple-system, Arial, sans-serif;
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
-    }
-    h1 { margin-bottom: 0; }
-    h2 { margin-top: 40px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
-    a { color: #2563eb; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helen Chang Hung | Exploring Applied AI</title>
+  <meta name="description" content="AI experiments, working prototypes, and practical notes on where AI meets real business problems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;650&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <h1>Helen Chang</h1>
-  <p>MBA Student · Data & AI Enthusiast</p>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">Helen Chang Hung</a>
+      <nav class="nav">
+        <a href="projects/">Projects</a>
+        <a href="writing/">Writing</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>About</h2>
-  <p>I'm an MBA student interested in analytics, AI applications, and building things for the web. This page showcases my projects and profile.</p>
+  <main class="wrap">
+    <p class="eyebrow">Exploring Applied AI</p>
+    <h1>Testing where AI actually solves business problems.</h1>
+    <p class="lede">I come from business development and capital markets across Asia. Here I build small AI prototypes and experiments, then document what worked, what failed, and what it would take to be commercially viable.</p>
+    <ul class="tags">
+      <li class="tag">AI applications</li>
+      <li class="tag">Business &amp; GTM</li>
+      <li class="tag">Product experiments</li>
+    </ul>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Language speaking tutoring web app</li>
-    <li>Korean speaking tutoring web app</li>
-  </ul>
+    <h2>Selected projects</h2>
+    <div class="cards">
+      <!-- To add a project: copy one card block, point href at the new page in /projects/ -->
+      <a class="card" href="projects/speakup.html">
+        <span class="status">Case study</span>
+        <h3>SpeakUp</h3>
+        <p>An AI speaking-practice app, and why I swapped direct speech-to-speech for a speech-to-text and text-to-speech pipeline.</p>
+        <span class="meta">Prototype · Cost vs. experience trade-offs</span>
+      </a>
+      <a class="card" href="projects/">
+        <span class="status">In progress</span>
+        <h3>Account Research Copilot</h3>
+        <p>Can AI produce a reliable B2B account briefing faster than manual research? Testing on 15 to 20 real companies.</p>
+        <span class="meta">Prototype + evaluation · Coming soon</span>
+      </a>
+    </div>
 
-  <h2>Links</h2>
-  <ul>
-    <li><a href="https://github.com/helenchang68">GitHub</a></li>
-  </ul>
+    <h2>How I document each project</h2>
+    <p>Every case study answers the same six questions: the problem, the hypothesis, the approach, the evidence, the commercial implications, and what I learned. I use AI-assisted coding, so the focus is on the decisions: framing the problem, choosing trade-offs, and testing whether the output holds up.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Helen Chang Hung · Singapore</span>
+      <span>
+        <a href="https://www.linkedin.com/in/changhung-helen/">LinkedIn</a> ·
+        <a href="https://github.com/helenchang68">GitHub</a>
+      </span>
+    </div>
+  </footer>
 </body>
 </html>
