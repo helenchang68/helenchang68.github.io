@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SpeakUp | Helen Chang Hung</title>
-  <meta name="description" content="An AI speaking tutor for four languages, and why a speech-to-text plus text-to-speech pipeline beat direct speech-to-speech for a small product.">
+  <title>SpeakUp | Helen Chang</title>
+  <meta name="description" content="An AI speaking tutor that corrects every sentence you say. Built for my own Korean, now in four languages.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;650&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="../">Helen Chang Hung</a>
+      <a class="brand" href="../">Helen Chang</a>
       <nav class="nav">
         <a href="./" aria-current="page">Projects</a>
         <a href="../writing/">Writing</a>
@@ -25,21 +25,25 @@
   <main class="wrap">
     <p class="eyebrow">Prototype · Case study · 2026</p>
     <h1>SpeakUp: an AI speaking tutor</h1>
-    <p class="lede">Direct speech-to-speech felt like the obvious design, but it was too expensive for a small product. Splitting the job into transcribe, reason, then speak cut cost, and the text step in the middle made structured, trackable feedback possible.</p>
+    <p class="lede">Speaking apps gave me someone to talk to in Korean, but never told me what was wrong with what I said. So I built a tutor that corrects every sentence. Friends learning Chinese and Vietnamese asked for their languages too, and it now covers four.</p>
 
     <dl class="summary">
-      <div><dt>Problem</dt><dd>Learners rarely get low-pressure speaking practice with instant correction</dd></div>
+      <div><dt>Problem</dt><dd>Speaking apps add practice, not per-sentence correction</dd></div>
       <div><dt>Built with</dt><dd>Next.js, OpenAI Whisper, GPT-4o, Google TTS, Supabase</dd></div>
       <div><dt>Languages</dt><dd>English, Chinese, Vietnamese, Korean</dd></div>
       <div><dt>Links</dt><dd><a href="https://github.com/helenchang68/language-tutor">Code on GitHub</a><!-- TODO: add live demo link --></dd></div>
     </dl>
 
     <h2>1. The problem</h2>
-    <p>Language learners can read and listen far better than they can speak, because speaking practice needs another person. Tutors are expensive, language exchanges are hard to schedule, and many learners are too self-conscious to make mistakes in front of someone. I experienced this myself learning Korean: strong reading and listening, much weaker speaking.</p>
+    <p>My Korean reading and listening were strong. My speaking wasn't. The fix seemed obvious: speak more. So I tried the usual apps and AI chat tools.</p>
+    <p>They all did the same thing. They gave me a conversation partner, which raised <em>how often</em> I practised. None of them told me what was wrong with each sentence I said. I could keep talking and repeat the same mistakes, because nothing flagged them. More practice without feedback mostly made my mistakes more fluent.</p>
+    <p>I couldn't find a tool that did both, so I built one for myself.</p>
+    <h3>From one learner to four languages</h3>
+    <p>I built the first version for Korean only. When I showed it to friends, those learning Vietnamese and Chinese asked if I could add their languages. That turned a personal tool into a small multi-user product, and the current version supports English, Chinese, Vietnamese and Korean.</p>
     <!-- TODO: add 1 to 2 lines from classmates or test users on how they practise speaking today. -->
 
     <h2>2. The hypothesis</h2>
-    <p>An AI conversation partner that replies naturally <em>and</em> flags each mistake with a more native phrasing would give learners more speaking reps than they get today, at a cost low enough to offer cheaply.</p>
+    <p>Learners improve faster when every spoken sentence gets an immediate correction and a more natural way to say it, not just a reply. And that feedback can be delivered at a cost low enough to offer cheaply.</p>
 
     <h2>3. The approach</h2>
     <p>Each turn runs through three steps:</p>
@@ -81,7 +85,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 Helen Chang Hung · Singapore</span>
+      <span>© 2026 Helen Chang · Singapore</span>
       <span>
         <a href="https://www.linkedin.com/in/changhung-helen/">LinkedIn</a> ·
         <a href="https://github.com/helenchang68">GitHub</a>
