@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What counts as a successful outcome? | Helen Chang</title>
+  <meta name="description" content="Outcome-based pricing makes the price per result predictable for customers, but someone still has to define a successful result.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;650&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .flow { list-style: none; padding: 16px 20px; margin: 20px 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); font-size: 15px; }
+    .flow li + li::before { content: "\2193"; display: block; color: var(--muted); margin: 4px 0; }
+    .post-source { margin-top: 36px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Helen Chang</a>
+      <nav class="nav">
+        <a href="../projects/">Projects</a>
+        <a href="./" aria-current="page">Writing</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Writing · Oct 26, 2026</p>
+    <h1>What counts as a successful outcome?</h1>
+    <p>While looking into how AI agent companies price their products, I came across outcome-based pricing.</p>
+    <p>Instead of charging customers based on how much AI they consume, vendors charge for a defined result.</p>
+    <p>It made me wonder how vendors set a price when the cost of delivering that result can be so unpredictable.</p>
+    <p>A study featured by Stanford&#x27;s Digital Economy Lab found that repeated runs of the same coding task could vary by up to 30x in token consumption. The models also struggled to predict their own usage.</p>
+    <p>For companies building agents using usage-priced LLM APIs, that uncertainty makes budgeting difficult. Under an outcome-based model for managed AI services, more of the delivery-cost risk shifts to the vendor.</p>
+    <p>Sierra argues in its article &#x27;Outcomemaxxing&#x27; that &quot;outcome-based pricing rewires your company.&quot;</p>
+    <p>Instead of being incentivized to drive more usage, the vendor has a financial incentive to deliver results efficiently.</p>
+    <p>Intercom&#x27;s Fin offers a concrete example, charging $0.99 for a customer support resolution, regardless of how many actions the agent takes within the conversation.</p>
+    <p>But Fin&#x27;s pricing documentation made me wonder what actually counts as a successful resolution.</p>
+    <p>A conversation can count as resolved when a customer leaves after receiving an answer without requesting further help. If the customer returns to the same conversation seeking more help, the original charge is reversed, so the conversation isn&#x27;t billed twice.</p>
+    <p>Even with this safeguard, a customer leaving doesn&#x27;t necessarily mean their problem was solved.</p>
+    <p>So while outcome-based pricing can make the price per outcome more predictable for customers, vendors still need to manage unpredictable delivery costs.</p>
+    <p>Just as importantly, both sides need to agree on what actually counts as a successful outcome.</p>
+    <p>If you&#x27;ve worked with outcome-based pricing, I&#x27;d be interested to hear more about how vendors and customers navigate this in practice.</p>
+
+    <p class="callout post-source">Originally posted on LinkedIn. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7520329751056523264/">Read the comments or join the discussion there.</a></p>
+    <p><a href="./">Back to all writing</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Helen Chang · Singapore</span>
+      <span>
+        <a href="https://www.linkedin.com/in/changhung-helen/">LinkedIn</a> ·
+        <a href="https://github.com/helenchang68">GitHub</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What an enterprise actually buys from ElevenLabs | Helen Chang</title>
+  <meta name="description" content="The voice-agent stack is surprisingly modular, and ElevenLabs and OpenAI can sit in the same stack.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;650&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .flow { list-style: none; padding: 16px 20px; margin: 20px 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); font-size: 15px; }
+    .flow li + li::before { content: "\2193"; display: block; color: var(--muted); margin: 4px 0; }
+    .post-source { margin-top: 36px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Helen Chang</a>
+      <nav class="nav">
+        <a href="../projects/">Projects</a>
+        <a href="./" aria-current="page">Writing</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Writing · Oct 15, 2026</p>
+    <h1>What an enterprise actually buys from ElevenLabs</h1>
+    <p>A comment on my last ElevenLabs post raised a question I thought was worth looking into further.</p>
+    <p>What is an enterprise actually buying when it chooses ElevenLabs?</p>
+    <p>Looking more closely, the answer seems surprisingly modular.</p>
+    <p>A company can use ElevenLabs at different levels of the voice-agent stack.</p>
+    <p>At the lightest level, if a company already has an application that generates the response text, it can use ElevenLabs’ speech APIs to turn that text into speech inside its own product.</p>
+    <p>If the company already has its own LLM, agent logic, and business tools, Speech Engine can provide the real-time voice interface, including speech-to-text, turn-taking, interruptions, and text-to-speech. The company still owns the reasoning, workflow, and tool execution.</p>
+    <p>If it wants more of the agent environment provided, it can use ElevenAgents, which brings together the voice layer with knowledge bases, tools, testing, monitoring, and LLM configuration.</p>
+    <p>Even then, the LLM does not have to come from ElevenLabs. ElevenAgents can use models from OpenAI, Anthropic or Google, as well as a company’s own model.</p>
+    <p>This is what I found interesting. ElevenLabs and OpenAI do not necessarily sit on opposite sides of the buying decision. They can be part of the same stack.</p>
+    <p>At a high level, ElevenAgents currently works something like this:</p>
+    <ol class="flow"><li>Customer speaks</li><li>Speech-to-text converts the audio into text</li><li>An LLM processes the text and decides what to do</li><li>Tools or APIs can retrieve information or take action</li><li>Text-to-speech turns the response back into audio</li></ol>
+    <p>This is different from a native speech-to-speech voice model, which can process audio directly without relying on a text transcript between the speech and reasoning stages.</p>
+    <p>That raised another question for me. Why use a cascaded architecture at all?</p>
+    <p>One advantage is modularity. The individual components are easier to inspect, swap, and connect to enterprise systems, while customers retain more choice over the LLM and surrounding workflow.</p>
+    <p>Native speech-to-speech may preserve more nuance in human speech, but a modular stack can offer advantages in model choice, observability, integration, and control. ElevenLabs also partially addresses the nuance issue by using real-time speech signals, such as prosody and emotional cues, for turn-taking.</p>
+    <p>So the question I came away with is really about where an enterprise wants to draw the boundary between what it builds itself and what it buys as part of the platform.</p>
+    <p>This is a simplified view based on ElevenLabs’ public documentation. I’d be interested to hear from people building voice agents if there are nuances I’ve missed.</p>
+
+    <p class="callout post-source">Originally posted on LinkedIn. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7516343402662096897/">Read the comments or join the discussion there.</a></p>
+    <p><a href="./">Back to all writing</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Helen Chang · Singapore</span>
+      <span>
+        <a href="https://www.linkedin.com/in/changhung-helen/">LinkedIn</a> ·
+        <a href="https://github.com/helenchang68">GitHub</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Below the surface of the AI stack | Helen Chang</title>
+  <meta name="description" content="Mapping the companies at Tech Week Singapore, and how go-to-market changes from data centers up to applications.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;650&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .flow { list-style: none; padding: 16px 20px; margin: 20px 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); font-size: 15px; }
+    .flow li + li::before { content: "\2193"; display: block; color: var(--muted); margin: 4px 0; }
+    .post-source { margin-top: 36px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Helen Chang</a>
+      <nav class="nav">
+        <a href="../projects/">Projects</a>
+        <a href="./" aria-current="page">Writing</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Writing · Oct 8, 2026</p>
+    <h1>Below the surface of the AI stack</h1>
+    <p>I realized recently that most of my exposure to AI has been on the software and research side.</p>
+    <p>I was already familiar with NVIDIA, AMD, the hyperscalers, and the broader infrastructure story behind AI. But at Tech Week Singapore last week, I was surprised by how much larger the ecosystem was than what I normally see in day-to-day conversations around AI.</p>
+    <p>There were some applications, but much more around cloud platforms, servers, chips, networking, data centers, cooling and power.</p>
+    <p>It felt like getting a glimpse below the surface of an iceberg.</p>
+    <p>After the event, I started mapping some of the companies I had seen. A very rough version of the stack looked like this:</p>
+    <ol class="flow"><li>AI applications and agents</li><li>Models and developer platforms</li><li>Data and software infrastructure</li><li>Cloud and AI compute</li><li>Servers, networking and storage</li><li>Chips and accelerators</li><li>Data centers, power and cooling</li></ol>
+    <p>What became more interesting was how GTM starts to change across those layers.</p>
+    <p>NVIDIA was the obvious reference point. We associate it most with compute, but its agreed acquisition of Hugging Face would deepen its position in the model and developer ecosystem.</p>
+    <p>Then there was FuriosaAI, which builds AI inference accelerators. I met Addison Chi, who leads APAC sales from Singapore and kindly walked me through their technology.</p>
+    <p>I also asked about the pre-sales role they were hiring for, and what stood out was how technical the role is. The sales process can involve benchmarking the platform against a customer&#x27;s own workloads, testing compatibility and proving the performance and economics before moving into production. Partners can also be part of the route to market, with Samsung SDS offering Furiosa-powered compute through its cloud.</p>
+    <p>At the cloud and AI compute layer, Bitdeer AI looks different again. I found it helpful to think of it as closer to the GPU-compute part of Google Cloud. For Bitdeer, GTM involves available compute, power, data center capacity and long-term customer commitments.</p>
+    <p>Then ClickHouse showed me another type of ecosystem. It is a database built to analyze huge volumes of data quickly. Mercado Libre, for example, uses ClickHouse Cloud to investigate questions such as why a payment failed, which can require searching enormous volumes of telemetry and system data almost instantly. Cloud, technology and consulting partners can then help enterprises integrate and deploy it.</p>
+    <p>At the bottom of the stack, “local” becomes even more literal. Power, cooling, connectivity, land and permits can determine where capacity can be built at all.</p>
+    <p>The further I looked, the less “AI GTM” looked like a straight line from vendor to customer. It started looking much more like an ecosystem.</p>
+    <p>Now I find myself looking at an AI company and asking not only</p>
+    <p>“What does it build?”</p>
+    <p>but also</p>
+    <p>“Where does it sit in the stack, who buys from it, and which partners matter in bringing its solution to market?”</p>
+
+    <p class="callout post-source">Originally posted on LinkedIn. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7513806636080214016/">Read the comments or join the discussion there.</a></p>
+    <p><a href="./">Back to all writing</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Helen Chang · Singapore</span>
+      <span>
+        <a href="https://www.linkedin.com/in/changhung-helen/">LinkedIn</a> ·
+        <a href="https://github.com/helenchang68">GitHub</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is the AI actually doing? | Helen Chang</title>
+  <meta name="description" content="Why agent observability matters more as AI moves from answering questions to taking action.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;650&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .flow { list-style: none; padding: 16px 20px; margin: 20px 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); font-size: 15px; }
+    .flow li + li::before { content: "\2193"; display: block; color: var(--muted); margin: 4px 0; }
+    .post-source { margin-top: 36px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Helen Chang</a>
+      <nav class="nav">
+        <a href="../projects/">Projects</a>
+        <a href="./" aria-current="page">Writing</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Writing · Sep 24, 2026</p>
+    <h1>What is the AI actually doing?</h1>
+    <p>At the recent Dell Technologies Forum Singapore 2026, a fireside chat featuring Diana Ser and Dr Chen Hui Ong got me thinking about an increasingly important question:</p>
+    <p>As AI becomes more autonomous, it is no longer enough to know whether the system is running.</p>
+    <p>We also need to know: What is the AI actually doing?</p>
+    <p>It made me think of it almost as “surveillance for AI.”</p>
+    <p>Looking into the concept afterward, the more established term seems to be AI observability, or more specifically for agents, agent observability.</p>
+    <p>If you&#x27;ve ever let AI handle a task for you and then thought, “Wait, what exactly did it just do?” you&#x27;ve already felt the need for observability.</p>
+    <p>With a simple chatbot, the interaction is relatively easy to see. You ask something, it responds.</p>
+    <p>But an AI agent might work through many steps on its own.</p>
+    <p>It could retrieve data, call APIs, use different tools, delegate work to another agent, make decisions and take actions before producing the final result.</p>
+    <p>So what happens when something goes wrong?</p>
+    <ul><li>Which tool did it call?</li><li>What information did it use?</li><li>Where did it go off track?</li><li>How much did the entire task cost?</li><li>Did it access something it should not have?</li><li>Did it technically complete the task but arrive at the wrong outcome?</li></ul>
+    <p>This is where observability becomes important.</p>
+    <p>If a harness gives an AI agent the environment, tools and structure it needs to operate, observability gives us visibility into how it actually operated.</p>
+    <p>And that distinction feels increasingly important as we move from AI that mostly answers questions to AI that can actually take action.</p>
+    <p>The more autonomy we give AI, the more important it becomes to understand what happens between the prompt and the final result.</p>
+    <p>Perhaps the next phase of enterprise AI is not only about making agents more capable.</p>
+    <p>It is also about making their actions more visible, traceable and easier to govern.</p>
+
+    <p class="callout post-source">Originally posted on LinkedIn. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7508733500041367552/">Read the comments or join the discussion there.</a></p>
+    <p><a href="./">Back to all writing</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Helen Chang · Singapore</span>
+      <span>
+        <a href="https://www.linkedin.com/in/changhung-helen/">LinkedIn</a> ·
+        <a href="https://github.com/helenchang68">GitHub</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
